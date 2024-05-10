@@ -1,0 +1,1 @@
+export { default as AstroMallDetailsScreen } from './AstroMallDetailsScreen';
