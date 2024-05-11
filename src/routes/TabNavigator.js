@@ -79,7 +79,9 @@ function HomeTabScreenStack(props) {
         name="Home"
         component={Home}
         options={{
-          headerTitle: props => <AppHeader {...props} headerTitle={'Home'} />,
+          headerTitle: props => (
+            <AppHeader {...props} headerTitle={'Dashboard'} />
+          ),
           ...HeaderArray,
           headerStyle: {backgroundColor: Colors.theme_background},
           headerLeft: () => <HeaderLeftMenuIcon {...props} />,
@@ -260,7 +262,7 @@ export function HomeScsreenTabAll(props) {
           ),
         }}
       />
-      <Tab.Screen
+      {/* <Tab.Screen
         name={RouteName.PROFILE_TAB}
         component={ProfileScreenStack}
         options={{
@@ -274,7 +276,7 @@ export function HomeScsreenTabAll(props) {
             />
           ),
         }}
-      />
+      /> */}
     </Tab.Navigator>
   );
 }

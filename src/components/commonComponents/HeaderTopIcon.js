@@ -18,7 +18,7 @@ const HeaderTopIcon = props => {
 
   return (
     <View style={SearchStyle.FlexRowMinSearch}>
-      {Price && (
+      {/* {Price && (
         <TouchableOpacity
           style={SearchStyle.PriceTextStyleView}
           onPress={() => onPressPrice()}>
@@ -48,19 +48,19 @@ const HeaderTopIcon = props => {
             color={Colors.white_text_color}
           />
         </TouchableOpacity>
-      )}
-      {Wallet && (
-        <TouchableOpacity
-          style={SearchStyle.PaddingIconRight}
-          onPress={() => onPressPrice()}>
-          <VectorIcon
-            icon="AntDesign"
-            name="wallet"
-            size={SF(25)}
-            color={Colors.white_text_color}
-          />
-        </TouchableOpacity>
-      )}
+      )} */}
+      {/* {Wallet && ( */}
+      <TouchableOpacity
+        style={SearchStyle.PaddingIconRight}
+        onPress={() => onPressPrice()}>
+        <VectorIcon
+          icon="MaterialCommunityIcons"
+          name="logout"
+          size={SF(25)}
+          color={Colors.black_text_color}
+        />
+      </TouchableOpacity>
+      {/* )} */}
       {/* {ColorPickers && <ColorPicker />} */}
     </View>
   );

@@ -8,7 +8,7 @@ function HeaderLeftMenuIcon(props) {
   return (
     <TouchableOpacity onPress={() => navigation.toggleDrawer()}>
       <VectorIcon
-        color={Colors.white_text_color}
+        color={Colors.black_text_color}
         name="navicon"
         icon="EvilIcons"
         size={SF(35)}

@@ -196,22 +196,6 @@ const HomeTab = props => {
   ];
   return (
     <View style={HomeTabStyles.WhiteBgColorMinView}>
-      <Spacing space={SH(20)} />
-      <View>
-        <TouchableOpacity
-          onPress={() => navigation.navigate(RouteName.SEARCH_SCREEN)}
-          style={HomeTabStyles.SearchBortderstyleHome}>
-          <VectorIcon
-            color={Colors.theme_background}
-            icon="AntDesign"
-            name="search1"
-            size={SF(25)}
-          />
-          <Text style={HomeTabStyles.SearchTextStyle}>
-            {t('Filter_Title_22')}
-          </Text>
-        </TouchableOpacity>
-      </View>
       <ScrollView>
         <View style={Style.Container}>
           <View style={Style.MinViewContent}>
@@ -344,34 +328,6 @@ const HomeTab = props => {
           </View>
         </View>
       </ScrollView>
-      <View style={HomeTabStyles.BottomPostionView}>
-        <TouchableOpacity
-          style={HomeTabStyles.BackgroundColor}
-          onPress={() => navigation.navigate(RouteName.CHAT_TAB)}>
-          <VectorIcon
-            icon="AntDesign"
-            name="wechat"
-            size={SF(20)}
-            color={Colors.white_text_color}
-          />
-          <Text style={HomeTabStyles.ChatTewxtStyle}>
-            {t('Paymnets_Title_7')}
-          </Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={HomeTabStyles.BackgroundColor}
-          onPress={() => navigation.navigate(RouteName.CALLS_TAB)}>
-          <VectorIcon
-            icon="AntDesign"
-            name="wechat"
-            size={SF(20)}
-            color={Colors.white_text_color}
-          />
-          <Text style={HomeTabStyles.ChatTewxtStyle}>
-            {t('Paymnets_Title_8')}
-          </Text>
-        </TouchableOpacity>
-      </View>
     </View>
   );
 };

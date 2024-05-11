@@ -40,7 +40,7 @@ function AppHeader({
           fontSize: SF(23),
           fontWeight: '700',
           fontFamily: Fonts.Poppins_Medium,
-          color: Colors.white_text_color,
+          color: Colors.black_text_color,
           ...titleStyle,
         },
         rightView: {
