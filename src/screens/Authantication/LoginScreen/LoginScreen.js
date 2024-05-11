@@ -1,5 +1,13 @@
 import React, {useState, useMemo} from 'react';
-import {View, Text, ScrollView, TouchableOpacity} from 'react-native';
+import {
+  View,
+  Text,
+  ScrollView,
+  TouchableOpacity,
+  StatusBar,
+  Image,
+  StyleSheet,
+} from 'react-native';
 import {
   Button,
   Container,
@@ -14,6 +22,7 @@ import {SH, SF} from '../../../utils';
 import {useTheme} from '@react-navigation/native';
 import {useTranslation} from 'react-i18next';
 import LinearGradient from 'react-native-linear-gradient';
+import AdminLogo from '../../../images/custom/adminlogo.png';
 
 const LoginScreen = props => {
   const {Colors} = useTheme();
@@ -34,8 +43,9 @@ const LoginScreen = props => {
 
   return (
     <Container>
+      <StatusBar backgroundColor={Colors.theme_background} />
       <View style={Logins.MinViewScreen}>
-        <LinearGradient
+        {/* <LinearGradient
           colors={['#C54E3E', '#5F261E']}
           style={Logins.LoginViewMintop}>
           <Spacing space={SH(20)} />
@@ -52,17 +62,22 @@ const LoginScreen = props => {
           <Spacing space={SH(30)} />
           <Text style={Logins.LoginText}>Log Into</Text>
           <Text style={Logins.LoginText}>Your account</Text>
-        </LinearGradient>
+        </LinearGradient> */}
+        {/* <View> */}
+        {/* </View> */}
         <View style={Logins.Container}>
-          <View style={Style.MinViewContent}>
-            <Spacing space={SH(240)} />
+          <View style={Logins.MinViewContent}>
+            <Spacing space={SH(100)} />
+            <Image source={AdminLogo} style={Logins.AdminLogo} />
+
+            {/* <Spacing space={SH(1)} /> */}
             <View style={Logins.InputSpaceView}>
               <Input
-                title={t('Mobile_Number')}
+                title={t('Enter_Your_Email')}
                 // placeholder={t('Mobile_Number')}
                 onChangeText={value => setMobileNumber(value)}
                 value={mobileNumber}
-                inputType="numeric"
+                inputType="email"
                 maxLength={10}
                 placeholderTextColor={Colors.gray_text_color}
               />
@@ -78,7 +93,7 @@ const LoginScreen = props => {
               onChangeText={text => setTextInputPassword(text)}
               secureTextEntry={passwordVisibility}
             />
-            <Spacing space={SH(10)} />
+            {/* <Spacing space={SH(10)} />
             <View style={Logins.ViewTextStyle}>
               <Text style={Logins.TextStyle}>
                 {t('Dont_Have_Account')}{' '}
@@ -89,7 +104,7 @@ const LoginScreen = props => {
                   {t('Register_Text')}
                 </Text>
               </Text>
-            </View>
+            </View> */}
             <Spacing space={SH(40)} />
             <View style={Logins.LoginButton}>
               <Button
@@ -97,13 +112,13 @@ const LoginScreen = props => {
                 onPress={() => navigation.navigate(RouteName.OTP_VERYFY_SCREEN)}
               />
             </View>
-            <Spacing space={SH(10)} />
+            {/* <Spacing space={SH(10)} />
             <TouchableOpacity
               onPress={() => navigation.navigate(RouteName.FORGOT_PASSWORD)}>
               <Text style={Logins.ForgetPasswordStyles}>
                 {t('Forgot_Password')}
               </Text>
-            </TouchableOpacity>
+            </TouchableOpacity> */}
           </View>
         </View>
       </View>

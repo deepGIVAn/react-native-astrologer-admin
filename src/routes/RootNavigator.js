@@ -64,7 +64,7 @@ const RootNavigator = props => {
   const renderScreens = () => {
     return (
       <>
-        <Stack.Screen name={RouteName.SPLSH} component={SplashScreen} />
+        {/* <Stack.Screen name={RouteName.SPLSH} component={SplashScreen} /> */}
         <Stack.Screen name={RouteName.LOGIN_SCREEN} component={LoginScreen} />
         <Stack.Screen
           name={RouteName.REGISTER_SCREEN}

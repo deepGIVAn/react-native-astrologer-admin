@@ -326,4 +326,16 @@ export default Login = Colors =>
       justifyContent: 'center',
       width: '100%',
     },
+    AdminLogo: {
+      width: '35%', // Adjust the multiplier as needed
+      height: '35%', // Adjust the multiplier as needed
+      resizeMode: 'contain',
+    },
+    MinViewContent: {
+      width: '95%',
+      height: '100%',
+      flex: 1,
+      // justifyContent: 'center',
+      alignItems: 'center',
+    },
   });
