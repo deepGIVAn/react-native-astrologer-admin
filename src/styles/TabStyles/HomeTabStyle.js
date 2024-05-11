@@ -398,4 +398,15 @@ export default HomeTabStyle = Colors =>
       width: '100%',
       height: '100%',
     },
+    AdminIcon: {
+      resizeMode: 'contain',
+      height: SH(120),
+      width: SW(120),
+    },
+    AdminView: {
+      width: '100%',
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
   });

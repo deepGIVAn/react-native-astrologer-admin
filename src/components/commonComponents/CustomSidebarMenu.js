@@ -33,10 +33,12 @@ const CustomSidebarMenu = props => {
   return (
     <ScrollView>
       <View style={Sidemenu.customslidebarmenu}>
-        <View style={Sidemenu.flexrowset}>
+        <TouchableOpacity
+          style={Sidemenu.flexrowset}
+          onPress={() => Onpressfunction(RouteName.HOME_TAB)}>
           <Image source={Adminlogo} style={Sidemenu.adminlogo} />
           <Text style={Sidemenu.adminstyle}>Admin</Text>
-        </View>
+        </TouchableOpacity>
         <TouchableOpacity
           style={Sidemenu.flexrowset}
           onPress={() => Onpressfunction(RouteName.HOME_TAB)}>
@@ -45,13 +47,13 @@ const CustomSidebarMenu = props => {
         </TouchableOpacity>
         <TouchableOpacity
           style={Sidemenu.flexrowset}
-          onPress={() => Onpressfunction(RouteName.BOOK_A_POOJA_SCREEN)}>
+          onPress={() => Onpressfunction(RouteName.HOME_TAB)}>
           <Image source={Horoscope} style={Sidemenu.listimage} />
           <Text style={Sidemenu.hometextstyle}>Monthly & Yearly Horoscope</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={Sidemenu.flexrowset}
-          onPress={() => Onpressfunction(RouteName.ORDER_HISTORTY_SCREEN)}>
+          onPress={() => Onpressfunction(RouteName.HOME_TAB)}>
           <Image source={Membership} style={Sidemenu.listimage} />
           <Text style={Sidemenu.hometextstyle}>
             List of Membership Customers
@@ -59,7 +61,7 @@ const CustomSidebarMenu = props => {
         </TouchableOpacity>
         <TouchableOpacity
           style={Sidemenu.flexrowset}
-          onPress={() => Onpressfunction(RouteName.ORDER_HISTORTY_SCREEN)}>
+          onPress={() => Onpressfunction(RouteName.HOME_TAB)}>
           <Image source={Courses} style={Sidemenu.listimage} />
           <Text style={Sidemenu.hometextstyle}>
             Adding Courses to Astromall
@@ -68,7 +70,7 @@ const CustomSidebarMenu = props => {
 
         <TouchableOpacity
           style={Sidemenu.flexrowset}
-          onPress={() => Onpressfunction(RouteName.BUY_MEBERSHIP)}>
+          onPress={() => Onpressfunction(RouteName.HOME_TAB)}>
           <Image source={Notification} style={Sidemenu.listimage} />
           <Text style={Sidemenu.hometextstyle}>
             Astrologers Profile Request
@@ -76,7 +78,7 @@ const CustomSidebarMenu = props => {
         </TouchableOpacity>
         <TouchableOpacity
           style={Sidemenu.flexrowset}
-          onPress={() => Onpressfunction(RouteName.PAYMENT_SCREEN)}>
+          onPress={() => Onpressfunction(RouteName.HOME_TAB)}>
           <Image source={AddingAstrologers} style={Sidemenu.listimage} />
           <Text style={Sidemenu.hometextstyle}>Adding Astrologers in List</Text>
         </TouchableOpacity>

@@ -193,7 +193,7 @@ export function HomeScsreenTabAll(props) {
         labelStyle: {},
         tabStyle: {
           height: SH(60),
-          backgroundColor: Colors.white_text_color,
+          backgroundColor: Colors.black_text_color,
           paddingBottom: SH(10),
         },
       }}>
@@ -204,7 +204,9 @@ export function HomeScsreenTabAll(props) {
           tabBarLabel: t('Home_Titles_1'),
           tabBarIcon: ({focused}) => (
             <VectorIcon
-              color={focused ? Colors.theme_background : Colors.gray_text_color}
+              color={
+                focused ? Colors.theme_background : Colors.black_text_color
+              }
               name="home"
               icon="AntDesign"
               size={SF(25)}
@@ -219,7 +221,9 @@ export function HomeScsreenTabAll(props) {
           tabBarLabel: t('Home_Titles_2'),
           tabBarIcon: ({focused}) => (
             <VectorIcon
-              color={focused ? Colors.theme_background : Colors.gray_text_color}
+              color={
+                focused ? Colors.theme_background : Colors.black_text_color
+              }
               name="chatbox-ellipses-outline"
               icon="Ionicons"
               size={SF(25)}
@@ -227,26 +231,6 @@ export function HomeScsreenTabAll(props) {
           ),
         }}
       />
-      {/* <Tab.Screen
-        name={RouteName.LIVE_SCREEN}
-        component={LiveScreen}
-        options={{
-          tabBarLabel: t('Home_Titles_3'),
-          tabBarIcon: ({focused}) => (
-            <TouchableOpacity
-              onPress={() => navigation.navigate(RouteName.LIVE_SCREEN)}>
-              <VectorIcon
-                color={
-                  focused ? Colors.theme_background : Colors.gray_text_color
-                }
-                name="live-tv"
-                icon="MaterialIcons"
-                size={SF(25)}
-              />
-            </TouchableOpacity>
-          ),
-        }}
-      /> */}
       <Tab.Screen
         name={RouteName.CALLS_TAB}
         component={CallTabScreenStack}
@@ -254,7 +238,9 @@ export function HomeScsreenTabAll(props) {
           tabBarLabel: t('Home_Titles_4'),
           tabBarIcon: ({focused}) => (
             <VectorIcon
-              color={focused ? Colors.theme_background : Colors.gray_text_color}
+              color={
+                focused ? Colors.theme_background : Colors.black_text_color
+              }
               name="phone-call"
               icon="Feather"
               size={SF(25)}
@@ -262,21 +248,6 @@ export function HomeScsreenTabAll(props) {
           ),
         }}
       />
-      {/* <Tab.Screen
-        name={RouteName.PROFILE_TAB}
-        component={ProfileScreenStack}
-        options={{
-          tabBarLabel: t('Profile_Text'),
-          tabBarIcon: ({focused}) => (
-            <VectorIcon
-              color={focused ? Colors.theme_background : Colors.gray_text_color}
-              name="user-circle"
-              icon="FontAwesome"
-              size={SF(20)}
-            />
-          ),
-        }}
-      /> */}
     </Tab.Navigator>
   );
 }

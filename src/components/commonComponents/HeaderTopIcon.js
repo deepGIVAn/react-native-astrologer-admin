@@ -1,8 +1,10 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Text, TouchableOpacity, View} from 'react-native';
 import {SearchStyle} from '../../styles';
-import {VectorIcon, ColorPicker} from '../../components';
+import {VectorIcon, ColorPicker, ConfirmationAlert} from '../../components';
 import {Colors, SF} from '../../utils';
+import {useTranslation} from 'react-i18next';
+import {RouteName} from '../../routes';
 
 const HeaderTopIcon = props => {
   const {
@@ -15,44 +17,26 @@ const HeaderTopIcon = props => {
     Wallet,
     ColorPickers,
   } = props;
+  const {t} = useTranslation();
+  const {navigation} = props;
+  const [alertVisible, setAlertVisible] = useState(false);
+  const [alertMessage, setAlertMessage] = useState('');
+  const onoknutton = () => {
+    navigation.navigate(RouteName.LOGIN_SCREEN);
+  };
+
+  var alertdata = {
+    logout: t('Are_You_Sure_logout'),
+  };
 
   return (
     <View style={SearchStyle.FlexRowMinSearch}>
-      {/* {Price && (
-        <TouchableOpacity
-          style={SearchStyle.PriceTextStyleView}
-          onPress={() => onPressPrice()}>
-          <Text style={SearchStyle.PriceStyle}>₹ 0</Text>
-        </TouchableOpacity>
-      )}
-      {Searchtrue && (
-        <TouchableOpacity
-          style={SearchStyle.PaddingIconRight}
-          onPress={() => onPresSearch()}>
-          <VectorIcon
-            icon="AntDesign"
-            name="search1"
-            size={SF(25)}
-            color={Colors.white_text_color}
-          />
-        </TouchableOpacity>
-      )}
-      {Filter && (
-        <TouchableOpacity
-          style={SearchStyle.PaddingIconRight}
-          onPress={() => onPresFilter()}>
-          <VectorIcon
-            icon="AntDesign"
-            name="filter"
-            size={SF(25)}
-            color={Colors.white_text_color}
-          />
-        </TouchableOpacity>
-      )} */}
-      {/* {Wallet && ( */}
       <TouchableOpacity
         style={SearchStyle.PaddingIconRight}
-        onPress={() => onPressPrice()}>
+        onPress={() => {
+          setAlertVisible(true);
+          setAlertMessage(alertdata.logout);
+        }}>
         <VectorIcon
           icon="MaterialCommunityIcons"
           name="logout"
@@ -60,8 +44,18 @@ const HeaderTopIcon = props => {
           color={Colors.black_text_color}
         />
       </TouchableOpacity>
-      {/* )} */}
-      {/* {ColorPickers && <ColorPicker />} */}
+      <ConfirmationAlert
+        message={alertMessage}
+        modalVisible={alertVisible}
+        setModalVisible={setAlertVisible}
+        onPressCancel={() => setAlertVisible(!alertVisible)}
+        onPress={() => {
+          setAlertVisible(!alertVisible);
+          onoknutton();
+        }}
+        cancelButtonText={t('Cancel_Button')}
+        buttonText={t('Ok')}
+      />
     </View>
   );
 };

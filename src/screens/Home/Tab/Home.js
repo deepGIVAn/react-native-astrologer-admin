@@ -1,7 +1,14 @@
 import React, {useMemo} from 'react';
 import {useTheme} from '@react-navigation/native';
-import {View, Text, FlatList, TouchableOpacity} from 'react-native';
-import {SH, SF} from '../../../utils';
+import {
+  View,
+  Text,
+  FlatList,
+  TouchableOpacity,
+  Image,
+  StyleSheet,
+} from 'react-native';
+import {SH, SF, SW, Colors, Fonts} from '../../../utils';
 import {
   HomeCategoryView,
   Spacing,
@@ -16,319 +23,195 @@ import images from '../../../index';
 import {RouteName} from '../../../routes';
 import {useTranslation} from 'react-i18next';
 import {ScrollView} from 'react-native-virtualized-view';
+import AdminLogo from '../../../images/custom/adminlogo.png';
+import conversation from '../../../images/custom/conversations.png';
+import list from '../../../images/custom/list.png';
+import payment from '../../../images/custom/payment.png';
 
 const HomeTab = props => {
   const {navigation} = props;
   const {t} = useTranslation();
+  const ChatList = [
+    {
+      id: 1,
+      image: images.Chat_Tab_1,
+      orderstext: 'Daily_Horoscope_20',
+      username: 'Daily_Horoscope_21',
+      texttwo: 'Daily_Horoscope_22',
+      lanhuage: 'Daily_Horoscope_23',
+      Expyears: 'Daily_Horoscope_24',
+      Minutes: 'Home_Title_19',
+      Waittime: 'Home_Title_33',
+    },
+    {
+      id: 2,
+      image: images.Chat_Tab_2,
+      orderstext: 'Daily_Horoscope_20',
+      username: 'Daily_Horoscope_26',
+      texttwo: 'Daily_Horoscope_27',
+      lanhuage: 'Daily_Horoscope_23',
+      Expyears: 'Home_Title_34',
+      Minutes: 'Home_Title_35',
+      Waittime: 'Home_Title_36',
+    },
+    {
+      id: 3,
+    },
+    {
+      id: 4,
+      image: images.Chat_Tab_3,
+      orderstext: 'Daily_Horoscope_20',
+      username: 'Daily_Horoscope_29',
+      texttwo: 'Home_Title_41',
+      lanhuage: 'Call_Title_14',
+      Expyears: 'Daily_Horoscope_28',
+      Minutes: 'Call_Title_15',
+      Waittime: 'Home_Title_42',
+    },
+    {
+      id: 5,
+      image: images.Chat_Tab_4,
+      orderstext: 'Daily_Horoscope_20',
+      username: 'Daily_Horoscope_30',
+      texttwo: 'Home_Title_43',
+      lanhuage: 'Daily_Horoscope_23',
+      Expyears: 'Daily_Horoscope_28',
+      Minutes: 'Call_Title_15',
+      Waittime: 'Home_Title_40',
+    },
+    {
+      id: 6,
+      image: images.Chat_Tab_5,
+      orderstext: 'Daily_Horoscope_20',
+      username: 'Home_Title_44',
+      texttwo: 'Home_Title_45',
+      lanhuage: 'Call_Title_14',
+      Expyears: 'Daily_Horoscope_28',
+      Minutes: 'Call_Title_15',
+      Waittime: 'Home_Title_46',
+    },
+    {
+      id: 7,
+      image: images.Chat_Tab_6,
+      orderstext: 'Daily_Horoscope_20',
+      username: 'Daily_Horoscope_36',
+      texttwo: 'Home_Title_43',
+      lanhuage: 'Call_Title_16',
+      Expyears: 'Call_Title_17',
+      Minutes: 'Call_Title_15',
+      Waittime: 'Call_Title_18',
+    },
+    {
+      id: 8,
+      image: images.Chat_Tab_7,
+      orderstext: 'Daily_Horoscope_20',
+      username: 'Call_Title_19',
+      texttwo: 'Call_Title_20',
+      lanhuage: 'Daily_Horoscope_23',
+      Expyears: 'Daily_Horoscope_28',
+      Minutes: 'Call_Title_15',
+      Waittime: 'Home_Title_33',
+    },
+    {
+      id: 9,
+      image: images.Chat_Tab_8,
+      orderstext: 'Daily_Horoscope_20',
+      username: 'Daily_Horoscope_34',
+      texttwo: 'Home_Title_47',
+      lanhuage: 'Call_Title_14',
+      Expyears: 'Call_Title_17',
+      Minutes: 'Home_Title_48',
+      Waittime: 'Home_Title_49',
+    },
+    {
+      id: 10,
+      image: images.Chat_Tab_9,
+      orderstext: 'Daily_Horoscope_20',
+      username: 'Daily_Horoscope_33',
+      texttwo: 'Home_Title_43',
+      lanhuage: 'Daily_Horoscope_23',
+      Expyears: 'Daily_Horoscope_28',
+      Minutes: 'Home_Title_50',
+      Waittime: 'Call_Title_18',
+    },
+  ];
 
   const {Colors} = useTheme();
   const HomeTabStyles = useMemo(() => HomeTabStyle(Colors), [Colors]);
 
-  const CategoryData = [
+  const DATA = [
     {
-      id: 1,
-      text: 'Home_Title_1',
-      imageseye: images.Home_1,
-      url: RouteName.DAILY_HOROSCOPE,
+      id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
+      icon: conversation,
+      title: 'First ItemDaily List of Astrologers Consultation',
     },
     {
-      id: 2,
-      text: 'Home_Title_2',
-      imageseye: images.Home_2,
-      url: RouteName.FREE_CUNDALI_SCREEN,
+      id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
+      icon: list,
+      title: 'List of No of Users with their Details',
     },
     {
-      id: 3,
-      text: 'Home_Title_4',
-      imageseye: images.Home_3,
-      url: RouteName.KUNDALI_MATCHING_SCREEN,
-    },
-    {
-      id: 4,
-      text: 'Home_Title_4',
-      imageseye: images.Home_4,
-      url: RouteName.Astrotalks_BLOG_SCREEN,
+      id: '58694a0f-3da1-471f-bd96-145571e29d72',
+      icon: payment,
+      title: 'All Payment Request Details',
     },
   ];
-  const LiveAstrologersdata = [
-    {
-      id: 1,
-      text: 'Daily_Horoscope_1',
-      imageseye: images.Live_Astrologers_2,
-      IconName: 'call',
-      digit: '400',
-      review: '8.9',
-    },
-    {
-      id: 2,
-      text: 'Daily_Horoscope_2',
-      imageseye: images.Live_Astrologers_6,
-      IconName: 'videocam',
-      digit: '1286',
-      review: '6.7',
-    },
-    {
-      id: 3,
-      text: 'Daily_Horoscope_3',
-      imageseye: images.Live_Astrologers_3,
-      IconName: 'videocam',
-      digit: '9322',
-      review: '9.5',
-    },
-    {
-      id: 4,
-      text: 'Daily_Horoscope_4',
-      imageseye: images.Live_Astrologers_7,
-      IconName: 'call',
-      digit: '2134',
-      review: '9.2',
-    },
-    {
-      id: 5,
-      text: 'Daily_Horoscope_5',
-      imageseye: images.Live_Astrologers_1,
-      IconName: 'videocam',
-      digit: '3945',
-      review: '9.9',
-    },
-    {
-      id: 6,
-      text: 'Daily_Horoscope_6',
-      imageseye: images.Live_Astrologers_4,
-      IconName: 'call',
-      digit: '3249',
-      review: '6.9',
-    },
-    {
-      id: 7,
-      text: 'Daily_Horoscope_7',
-      imageseye: images.Live_Astrologers_5,
-      IconName: 'call',
-      digit: '9765',
-      review: '8.9',
-    },
-    {
-      id: 8,
-      text: 'Daily_Horoscope_8',
-      imageseye: images.Live_Astrologers_4,
-      IconName: 'videocam',
-      digit: '4643',
-      review: '7.9',
-    },
-  ];
-  const Astrologersdata = [
-    {
-      id: 1,
-      text: 'Home_Title_5',
-      imageseye: images.Astrologers_View_1,
-      Priceset: '₹ 30/min',
-    },
-    {
-      id: 2,
-      text: 'Home_Title_6',
-      imageseye: images.Astrologers_View_2,
-      Priceset: '₹ 47/min',
-    },
-    {
-      id: 3,
-      text: 'Home_Title_7',
-      imageseye: images.Astrologers_View_3,
-      IconName: 'videocam',
-      Priceset: '₹ 89/min',
-    },
-    {
-      id: 4,
-      text: 'Home_Title_8',
-      imageseye: images.Astrologers_View_4,
-      Priceset: '₹ 76/min',
-    },
-    {
-      id: 5,
-      text: 'Home_Title_9',
-      imageseye: images.Astrologers_View_5,
-      Priceset: '₹ 55/min',
-    },
-    {
-      id: 6,
-      text: 'Home_Title_10',
-      imageseye: images.Astrologers_View_6,
-      Priceset: '₹ 44/min',
-    },
-    {
-      id: 7,
-      text: 'Home_Title_11',
-      imageseye: images.Astrologers_View_7,
-      Priceset: '₹ 68/min',
-    },
-    {
-      id: 8,
-      text: 'Home_Title_12',
-      imageseye: images.Astrologers_View_8,
-      Priceset: '₹ 73/min',
-    },
-  ];
-  const ShopMalldata = [
-    {
-      id: 1,
-      text: 'Home_Title_13',
-      imageseye: images.ShopAstroMallView_1,
-      Priceset: 'Home_Title_19',
-    },
-    {
-      id: 2,
-      text: 'Astromall_Title_18',
-      imageseye: images.ShopAstroMallView_2,
-      Priceset: 'Home_Title_18',
-    },
-    {
-      id: 3,
-      text: 'Home_Title_14',
-      imageseye: images.ShopAstroMallView_3,
-      IconName: 'videocam',
-      Priceset: 'Home_Title_17',
-    },
-    {
-      id: 4,
-      text: 'Home_Title_15',
-      imageseye: images.ShopAstroMallView_4,
-      Priceset: 'Home_Title_16',
-    },
-  ];
+
   return (
     <View style={HomeTabStyles.WhiteBgColorMinView}>
       <ScrollView>
-        <View style={Style.Container}>
-          <View style={Style.MinViewContent}>
-            <Spacing space={SH(40)} />
-            <FlatList
-              data={CategoryData}
-              horizontal
-              showsHorizontalScrollIndicator={false}
-              renderItem={({item}) => (
-                <HomeCategoryView
-                  item={item}
-                  onPress={() => navigation.navigate(item.url)}
-                />
-              )}
-              keyExtractor={item => item.id}
-            />
-            {/* <Spacing space={SH(25)} /> */}
-            {/* <View style={HomeTabStyles.FlexRowLive}>
-              <Text style={HomeTabStyles.LiveAstrologyText}>
-                {t('Home_Title_22')}
-              </Text>
-              <TouchableOpacity
-                onPress={() => navigation.navigate(RouteName.FILTER_SCREEN)}>
-                <Text style={HomeTabStyles.ViewAllTextStyle}>
-                  {t('Home_Title_23')}
-                </Text>
-              </TouchableOpacity>
-            </View>
-            <Spacing space={SH(10)} />
-            <FlatList
-              data={LiveAstrologersdata}
-              horizontal
-              showsHorizontalScrollIndicator={false}
-              renderItem={({item}) => (
-                <LiveAstrologers
-                  item={item}
-                  onPress={() =>
-                    navigation.navigate(RouteName.AUDIO_CALL_SCREEN)
-                  }
-                />
-              )}
-              keyExtractor={item => item.id}
-            /> */}
-            <Spacing space={SH(25)} />
-            <View style={HomeTabStyles.FlexRowLive}>
-              <Text style={HomeTabStyles.LiveAstrologyText}>
-                {t('Home_Title_24')}
-              </Text>
-              <TouchableOpacity>
-                <Text style={HomeTabStyles.ViewAllTextStyle}>
-                  {t('Home_Title_25')}
-                </Text>
-              </TouchableOpacity>
-            </View>
-            <Spacing space={SH(10)} />
-            <FlatList
-              data={Astrologersdata}
-              horizontal
-              showsHorizontalScrollIndicator={false}
-              renderItem={({item}) => (
-                <AstrologersView
-                  item={item}
-                  title={t('Home_Title_26')}
-                  onPress={() => navigation.navigate(RouteName.CHAT_SCREEN)}
-                />
-              )}
-              keyExtractor={item => item.id}
-            />
-            <Spacing space={SH(25)} />
-            <View style={HomeTabStyles.FlexRowLive}>
-              <Text style={HomeTabStyles.LiveAstrologyText}>
-                {t('Home_Title_27')}
-              </Text>
-              <TouchableOpacity
-                onPress={() =>
-                  navigation.navigate(RouteName.Astrotalks_BLOG_SCREEN)
-                }>
-                <Text style={HomeTabStyles.ViewAllTextStyle}>
-                  {t('Home_Title_30')}
-                </Text>
-              </TouchableOpacity>
-            </View>
-            <Spacing space={SH(10)} />
-            <FlatList
-              data={LiveAstrologersdata}
-              horizontal
-              showsHorizontalScrollIndicator={false}
-              renderItem={({item}) => (
-                <LatestBlogView
-                  item={item}
-                  onPress={() =>
-                    navigation.navigate(
-                      RouteName.Astrotalks_BLOG_DETAILS_SCREEN,
-                    )
-                  }
-                />
-              )}
-              keyExtractor={item => item.id}
-            />
-            <Spacing space={SH(25)} />
-            <View style={HomeTabStyles.FlexRowLive}>
-              <Text style={HomeTabStyles.LiveAstrologyText}>
-                {t('Home_Title_29')}
-              </Text>
-              <TouchableOpacity
-                onPress={() =>
-                  navigation.navigate(RouteName.ASTROMALL_PANDITLISTING_SCREEN)
-                }>
-                <Text style={HomeTabStyles.ViewAllTextStyle}>
-                  {t('Home_Title_30')}
-                </Text>
-              </TouchableOpacity>
-            </View>
-            <Spacing space={SH(10)} />
-            <FlatList
-              data={ShopMalldata}
-              horizontal
-              showsHorizontalScrollIndicator={false}
-              renderItem={({item}) => (
-                <ShopAstromallView
-                  item={item}
-                  onPress={() =>
-                    navigation.navigate(RouteName.ASTROMALL_SCREEN)
-                  }
-                />
-              )}
-              keyExtractor={item => item.id}
-            />
-            <Spacing space={SH(105)} />
-          </View>
+        <Spacing space={SH(20)} />
+        <View style={HomeTabStyles.AdminView}>
+          <Image source={AdminLogo} style={HomeTabStyles.AdminIcon} />
+        </View>
+        <Spacing space={SH(20)} />
+        <View>
+          <FlatList
+            data={DATA}
+            renderItem={({item}) => (
+              <Item title={item.title} icon={item.icon} />
+            )}
+            keyExtractor={item => item.id}
+          />
         </View>
       </ScrollView>
     </View>
   );
 };
+
+const Item = ({title, icon}) => (
+  <View style={styles.item}>
+    <Image source={icon} style={styles.icon} />
+    <Text style={styles.title}>{title}</Text>
+  </View>
+);
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    // marginTop: StatusBar.currentHeight || 0,
+  },
+  item: {
+    backgroundColor: '#f9c2ff',
+    padding: 10,
+    borderRadius: 16,
+    marginVertical: 8,
+    marginHorizontal: 16,
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  title: {
+    fontSize: 20,
+    paddingLeft: SH(15),
+    color: Colors.black_text_color,
+    fontFamily: Fonts.Poppins_Medium,
+    width: '85%',
+  },
+  icon: {
+    resizeMode: 'contain',
+    width: SW(40),
+    height: SH(40),
+  },
+});
+
 export default HomeTab;
