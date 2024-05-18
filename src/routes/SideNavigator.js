@@ -25,6 +25,14 @@ import {
   BookAPoojaScreen,
 } from '../screens';
 import {Style} from '../styles';
+import CreateAstrologer from '../screens/CreateAstrologer/CreateAstrologer';
+import Blogs from '../screens/Blogs/Blogs';
+import Astrologers from '../screens/Astrologers/Astrologers';
+import ProfileRequests from '../screens/ProfileRequests/ProfileRequets';
+import YearlyHoroscope from '../screens/YearlyHoroscope/YearlyHoroscope';
+import MonthlyHoroscope from '../screens/MonthlyHoroscope/MonthlyHoroscope';
+import AstroUniverseFAQ from '../screens/AstroUnifaqs/AstroUniverseFAQ';
+import Purchases from '../screens/Purchases/Purchases';
 
 const SideNavigator = props => {
   const Stack = createNativeStackNavigator();
@@ -41,7 +49,7 @@ const SideNavigator = props => {
   };
   const HeaderArray = {
     headerShown: true,
-    headerTintColor: Colors.white_text_color,
+    headerTintColor: Colors.black_text_color,
     headerShadowVisible: false,
   };
   const [colorValue, setColorValue] = useState(MyTheme);
@@ -144,6 +152,180 @@ const SideNavigator = props => {
           headerStyle: {backgroundColor: Colors.theme_background},
         }}
       />
+
+      <Drawer.Screen
+        name={RouteName.CREATE_ASTROLOGER}
+        component={CreateAstrologer}
+        options={{
+          headerTitle: props => (
+            <AppHeader {...props} headerTitle="Create Astrologer" />
+          ),
+          headerRight: () => (
+            <HeaderTopIcon
+              Filter={true}
+              Price={true}
+              {...props}
+              onPressPrice={() =>
+                navigation.navigate(RouteName.ADD_MONEY_TO_WALLET)
+              }
+              onPresSearch={() => navigation.navigate(RouteName.SEARCH_SCREEN)}
+              Searchtrue={true}
+              onPresFilter={() => navigation.navigate(RouteName.FILTER_SCREEN)}
+            />
+          ),
+          ...HeaderArray,
+          headerStyle: {backgroundColor: Colors.theme_background},
+        }}
+      />
+
+      <Drawer.Screen
+        name={RouteName.BLOGS}
+        component={Blogs}
+        options={{
+          headerTitle: props => <AppHeader {...props} headerTitle="Blogs" />,
+          headerRight: () => (
+            <HeaderTopIcon
+              Filter={true}
+              Price={true}
+              {...props}
+              onPressPrice={() =>
+                navigation.navigate(RouteName.ADD_MONEY_TO_WALLET)
+              }
+              onPresSearch={() => navigation.navigate(RouteName.SEARCH_SCREEN)}
+              Searchtrue={true}
+              onPresFilter={() => navigation.navigate(RouteName.FILTER_SCREEN)}
+            />
+          ),
+          ...HeaderArray,
+          headerStyle: {backgroundColor: Colors.theme_background},
+        }}
+      />
+
+      <Drawer.Screen
+        name={RouteName.ASTROLOGER_LIST}
+        component={Astrologers}
+        options={{
+          headerTitle: props => (
+            <AppHeader {...props} headerTitle="Astrologers List" />
+          ),
+          headerRight: () => (
+            <HeaderTopIcon
+              Filter={true}
+              Price={true}
+              {...props}
+              onPressPrice={() =>
+                navigation.navigate(RouteName.ADD_MONEY_TO_WALLET)
+              }
+              onPresSearch={() => navigation.navigate(RouteName.SEARCH_SCREEN)}
+              Searchtrue={true}
+              onPresFilter={() => navigation.navigate(RouteName.FILTER_SCREEN)}
+            />
+          ),
+          ...HeaderArray,
+          headerStyle: {backgroundColor: Colors.theme_background},
+        }}
+      />
+
+      <Drawer.Screen
+        name={RouteName.ASTROFAQ}
+        component={AstroUniverseFAQ}
+        options={{
+          headerTitle: props => (
+            <AppHeader {...props} headerTitle="AstroUniverse FAQ" />
+          ),
+          headerRight: () => (
+            <HeaderTopIcon
+              Filter={true}
+              Price={true}
+              {...props}
+              onPressPrice={() =>
+                navigation.navigate(RouteName.ADD_MONEY_TO_WALLET)
+              }
+              onPresSearch={() => navigation.navigate(RouteName.SEARCH_SCREEN)}
+              Searchtrue={true}
+              onPresFilter={() => navigation.navigate(RouteName.FILTER_SCREEN)}
+            />
+          ),
+          ...HeaderArray,
+          headerStyle: {backgroundColor: Colors.theme_background},
+        }}
+      />
+
+      <Drawer.Screen
+        name={RouteName.YEARLYHOROSCOPE}
+        component={YearlyHoroscope}
+        options={{
+          headerTitle: props => (
+            <AppHeader {...props} headerTitle="Yearly Horoscope" />
+          ),
+          headerRight: () => (
+            <HeaderTopIcon
+              Filter={true}
+              Price={true}
+              {...props}
+              onPressPrice={() =>
+                navigation.navigate(RouteName.ADD_MONEY_TO_WALLET)
+              }
+              onPresSearch={() => navigation.navigate(RouteName.SEARCH_SCREEN)}
+              Searchtrue={true}
+              onPresFilter={() => navigation.navigate(RouteName.FILTER_SCREEN)}
+            />
+          ),
+          ...HeaderArray,
+          headerStyle: {backgroundColor: Colors.theme_background},
+        }}
+      />
+
+      <Drawer.Screen
+        name={RouteName.MONTHLYHOROSCOPE}
+        component={MonthlyHoroscope}
+        options={{
+          headerTitle: props => (
+            <AppHeader {...props} headerTitle="Monthly Horoscope" />
+          ),
+          headerRight: () => (
+            <HeaderTopIcon
+              Filter={true}
+              Price={true}
+              {...props}
+              onPressPrice={() =>
+                navigation.navigate(RouteName.ADD_MONEY_TO_WALLET)
+              }
+              onPresSearch={() => navigation.navigate(RouteName.SEARCH_SCREEN)}
+              Searchtrue={true}
+              onPresFilter={() => navigation.navigate(RouteName.FILTER_SCREEN)}
+            />
+          ),
+          ...HeaderArray,
+          headerStyle: {backgroundColor: Colors.theme_background},
+        }}
+      />
+
+      <Drawer.Screen
+        name={RouteName.PURCHASES}
+        component={Purchases}
+        options={{
+          headerTitle: props => (
+            <AppHeader {...props} headerTitle="Purchases" />
+          ),
+          headerRight: () => (
+            <HeaderTopIcon
+              Filter={true}
+              Price={true}
+              {...props}
+              onPressPrice={() =>
+                navigation.navigate(RouteName.ADD_MONEY_TO_WALLET)
+              }
+              onPresSearch={() => navigation.navigate(RouteName.SEARCH_SCREEN)}
+              Searchtrue={true}
+              onPresFilter={() => navigation.navigate(RouteName.FILTER_SCREEN)}
+            />
+          ),
+          ...HeaderArray,
+          headerStyle: {backgroundColor: Colors.theme_background},
+        }}
+      />
+
       <Drawer.Screen
         name={RouteName.PAYMENT_SUCCESSFULLY}
         component={PaymentSuccessFully}

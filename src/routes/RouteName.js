@@ -46,5 +46,13 @@ const RouteName = {
   KUNDALI_MATCHING_RESULTS_SCREEN: 'KundaliMatchingResults',
   SEARCH_SCREEN: 'SearchScreen',
   FILTER_SCREEN: 'FilterScreen',
+  BLOGS: 'Blogs',
+  ASTROLOGER_LIST: 'Astrologers',
+  PROFILE_REQUEST: 'ProfileRequests',
+  CREATE_ASTROLOGER: 'CreateAstrologer',
+  ASTROFAQ: 'Astrofaq',
+  YEARLYHOROSCOPE: 'Yearlyhoroscope',
+  MONTHLYHOROSCOPE: 'Monthlyhoroscope',
+  PURCHASES: 'Purchases',
 };
 export default RouteName;

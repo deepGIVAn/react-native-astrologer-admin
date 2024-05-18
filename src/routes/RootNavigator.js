@@ -35,6 +35,7 @@ import {
 } from '../screens';
 import {OrderHistory} from '../screens/OrderHistory';
 import {HeaderTopIcon} from '../components';
+import CreateAstrologer from '../screens/CreateAstrologer/CreateAstrologer';
 
 const RootNavigator = props => {
   const Stack = createNativeStackNavigator();
@@ -88,6 +89,18 @@ const RootNavigator = props => {
           name={RouteName.FORGOT_PASSWORD}
           component={ForgotPassword}
         />
+        {/* <Stack.Screen
+          name={RouteName.CREATE_ASTROLOGER}
+          options={{
+            ...HeaderArray,
+            headerStyle: {backgroundColor: Colors.theme_background},
+            headerTitle: props => (
+              <HeaderTitle {...props} Title="Create Astrologer" />
+            ),
+          }}
+          component={CreateAstrologer}
+        /> */}
+
         <Stack.Screen
           name={RouteName.EDIT_PROFILE_SCREEN}
           options={{
