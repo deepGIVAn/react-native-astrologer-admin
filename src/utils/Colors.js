@@ -1,5 +1,6 @@
 export const Colors = {
   theme_background: '#C54E3E',
+  admin_background: '#FBEBCE',
   theme_modified: '#D29221',
   old_theme: '#351175',
   theme_modified_background: '#EEE5F3',
